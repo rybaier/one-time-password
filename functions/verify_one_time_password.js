@@ -11,7 +11,7 @@ module.exports = function(req, res) {
 
     admin.auth().getUser(phone)
         .then(() => {
-            const ref = admin.database().ref('users/' + phone);
+            const ref = admin.auth().ref('users/' + phone);
             ref.on('value', snapshot => {
                 ref.off()    
                 const user = snapshot.val();

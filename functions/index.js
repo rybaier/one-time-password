@@ -9,6 +9,7 @@ const verifyOneTimePassword = require('./verify_one_time_password')
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://one-time-password-d2581.firebaseio.com"
 });
 
 exports.createUser = functions.https.onRequest(createUser);
